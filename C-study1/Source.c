@@ -24,9 +24,10 @@ int main(void) {
 	scanf_s("%d", &scr2);
 	printf("Enter a number you want to add them .");
 	scanf_s("%d", &addNum);
-	add(scr1, scr2, addNum);
+	add(&scr1, &scr2, addNum);
 	printf("%d　点加算したので、科目１は%d点\n科目２は%d点となりました。\n", addNum, scr1,scr2);
 
+	return 0;
 
 }
 
@@ -39,10 +40,8 @@ int min(int x, int y) {
 		return x;
 }
 
-int add(int a, int b, int c) {
-	a += c;
-	b += c;
-
-	return 0;
+int add(int *x1, int *x2, int a) {
+	*x1 += a;
+	*x2 += a;
 
 }
